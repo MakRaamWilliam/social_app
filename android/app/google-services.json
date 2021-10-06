@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "318218453912",
+    "project_id": "social-app-520db",
+    "storage_bucket": "social-app-520db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318218453912:android:0db3fdcdf3b7cfd666a1ed",
+        "android_client_info": {
+          "package_name": "com.example.hello_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318218453912-9j1beuk2v5fbehh73vpaeh7qiolur2a2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hello_flutter",
+            "certificate_hash": "c617e79f1a0fa0dfae3cd0de04ec242fae3a5d55"
+          }
+        },
+        {
+          "client_id": "318218453912-vp516rm1id4kkb0q3nk89q6fnsq8emv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWRVPCWAUJHnyZ8zMdkaJFncnmLJAIP4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318218453912-vp516rm1id4kkb0q3nk89q6fnsq8emv7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "318218453912-pvdttbvptalbd045vii1rtkagkdn859o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.helloFlutter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318218453912:android:b602ba5ffda5093366a1ed",
+        "android_client_info": {
+          "package_name": "com.example.social_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318218453912-k78p8htneh5kk5o9sdudbcbh3turjclv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.social_app",
+            "certificate_hash": "c617e79f1a0fa0dfae3cd0de04ec242fae3a5d55"
+          }
+        },
+        {
+          "client_id": "318218453912-vp516rm1id4kkb0q3nk89q6fnsq8emv7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWRVPCWAUJHnyZ8zMdkaJFncnmLJAIP4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318218453912-vp516rm1id4kkb0q3nk89q6fnsq8emv7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "318218453912-pvdttbvptalbd045vii1rtkagkdn859o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.helloFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
