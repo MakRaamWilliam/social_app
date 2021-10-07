@@ -50,7 +50,7 @@ void main() async {
   Bloc.observer = MyBlocObserver();
 
   runApp(
-      MyApp()
+      MyApp(),
   );
 }
 
@@ -76,6 +76,7 @@ class MyApp extends StatelessWidget{
                 widget = SocialLayout();
               }
               return  MaterialApp(
+                  debugShowCheckedModeBanner: false,
                 home: Directionality
                   (
                     textDirection: TextDirection.ltr,

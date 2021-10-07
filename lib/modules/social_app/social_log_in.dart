@@ -44,18 +44,30 @@ class SocialLogInScreen extends StatelessWidget{
         builder: (context,state){
           SocialLoginCubit cubit = SocialLoginCubit.getInstance(context);
             return Scaffold(
-              body: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: SingleChildScrollView(
-                  child: Form(
+              body: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [Colors.blueGrey, Colors.lightBlueAccent]),
+                ),
+                child: ListView(
+                  children:<Widget>[
+                  Form(
                     key: formkeys,
                     child: Column(
                       children: [
-                        Image.network(
-                          "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0015/7587/brand.gif?itok=CbbOOGEv",
-                          width: 200.0,
-                          height: 150.0,
+                        Row(
+                          children: [
+                            verticalText(),
+                            textLogin(),
+                          ],
                         ),
+                        // Image.network(
+                        //   "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0015/7587/brand.gif?itok=CbbOOGEv",
+                        //   width: 200.0,
+                        //   height: 150.0,
+                        // ),
                         const SizedBox(
                           height: 40.0,
                         ),
@@ -65,12 +77,15 @@ class SocialLogInScreen extends StatelessWidget{
                           validText:  "Email can not be empty",
                           label: "Email Address" ,
                           prefix: Icons.email,
+                          border: false,
                           ),
                         const SizedBox(
-                          height: 40.0,
+                          height: 20.0,
                         ),
                         defaultFormField(
                           controller: passwordController,
+                          prefix: Icons.lock,
+                          border: false,
                           type: TextInputType.visiblePassword,
                           isPassword: cubit.isPasswordSecure,
                           validText: "Password can not be empty",
@@ -134,6 +149,7 @@ class SocialLogInScreen extends StatelessWidget{
                       ],
                     ),
                   ),
+                ]
                 ),
               ),
           );

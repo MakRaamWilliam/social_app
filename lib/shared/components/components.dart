@@ -31,31 +31,6 @@ Widget defaultButton({
       ),
     );
 
-Widget defultTextForm
-(
-{
-  required TextEditingController controller,
-  required TextInputType textInputType,
-  Function(String value)?  onFieldSubmitted,
-  InputDecoration? decoration,
-  String validText ="Can not be empty!",
-
-})
-{
-return TextFormField(
-        controller: controller,
-        keyboardType: textInputType,
-        onFieldSubmitted: onFieldSubmitted,
-        validator: (value) {
-          if (value!.isEmpty) {
-            return validText;
-          }
-          return null;
-        },
-        decoration: decoration,
-        );
-
-}
 
 Widget defaultFormField({
   required TextEditingController controller,
@@ -71,6 +46,8 @@ Widget defaultFormField({
   Function()? suffixPressed,
   bool isClickable = true,
   bool readOnly = false,
+  TextStyle? style,
+  border = true,
 
 }) =>
     TextFormField(
@@ -82,6 +59,7 @@ Widget defaultFormField({
       onFieldSubmitted: onSubmit,
       onChanged: onChange,
       onTap: onTap,
+      style: style,
       validator: (value) {
         if (value!.isEmpty) {
           return validText;
@@ -90,6 +68,9 @@ Widget defaultFormField({
       },
       decoration: InputDecoration(
         labelText: label,
+        labelStyle: const TextStyle(
+        color: Colors.black,
+      ),
         prefixIcon: Icon(
           prefix,
         ),
@@ -98,10 +79,11 @@ Widget defaultFormField({
           onPressed: suffixPressed,
           icon: Icon(
             suffix,
+            color: Colors.black,
           ),
         )
             : null,
-        border: const OutlineInputBorder(),
+        border: border? const OutlineInputBorder():InputBorder.none ,
       ),
     );
 
@@ -155,9 +137,6 @@ void defaultToast({
 }
 
 
-
-
-
 Widget myDivider() => Padding(
   padding: const EdgeInsetsDirectional.only(
     start: 20.0,
@@ -169,3 +148,91 @@ Widget myDivider() => Padding(
   ),
 );
 
+Widget textLogin(){
+
+  return Padding(
+    padding: const EdgeInsets.only(top: 30.0, left: 10.0),
+    child: SizedBox(
+      //color: Colors.green,
+      height: 200,
+      width: 200,
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 60,
+          ),
+          const Center(
+            child: Text(
+              'A world of possibility in an app',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget verticalText(){
+  return const Padding(
+    padding: EdgeInsets.only(top: 60, left: 10),
+    child: RotatedBox(
+        quarterTurns: -1,
+        child: Text(
+          'Sing in',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 38,
+            fontWeight: FontWeight.w900,
+          ),
+        )),
+  );
+}
+
+Widget singUpText(){
+  return const Padding(
+    padding: EdgeInsets.only(top: 30, left: 10),
+    child: RotatedBox(
+        quarterTurns: -1,
+        child: Text(
+          'Sing up',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 38,
+            fontWeight: FontWeight.w900,
+          ),
+        )),
+  );
+
+}
+
+Widget verticalNew(){
+  return Padding(
+    padding: const EdgeInsets.only(top: 10.0, left: 10.0),
+    child: SizedBox(
+      //color: Colors.green,
+      height: 200,
+      width: 200,
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 60,
+          ),
+          const Center(
+            child: Text(
+              'We can start something new',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+
+}

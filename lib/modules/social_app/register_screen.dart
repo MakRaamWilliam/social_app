@@ -46,14 +46,25 @@ class RegistrationScreen extends StatelessWidget{
         builder: (context,state){
           SocialRegisterCubit cubit = SocialRegisterCubit.getInstance(context);
           return Scaffold(
-            appBar: AppBar(),
-            body: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: SingleChildScrollView(
-                child: Form(
+            body: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [Colors.blueGrey, Colors.lightBlueAccent]),
+              ),
+              child: ListView(
+                children: <Widget>[
+                Form(
                   key: formkeys,
                   child: Column(
                     children: [
+                      Row(
+                        children: [
+                          singUpText(),
+                          verticalNew(),
+                        ],
+                      ),
                       defaultFormField(
                         controller: nameController,
                         type: TextInputType.text,
@@ -140,6 +151,7 @@ class RegistrationScreen extends StatelessWidget{
                     ],
                   ),
                 ),
+              ]
               ),
             ),
           );
