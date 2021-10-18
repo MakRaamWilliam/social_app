@@ -84,7 +84,7 @@ class SocialLogInScreen extends StatelessWidget{
                         ),
                         defaultFormField(
                           controller: passwordController,
-                          prefix: Icons.lock,
+                          prefix: Icons.security,
                           border: false,
                           type: TextInputType.visiblePassword,
                           isPassword: cubit.isPasswordSecure,

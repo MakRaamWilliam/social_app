@@ -6,6 +6,8 @@ import 'package:social_app/layout/social_app/cubit/cubit.dart';
 import 'package:social_app/layout/social_app/cubit/states.dart';
 import 'package:social_app/models/social_app/message_data.dart';
 import 'package:social_app/models/social_app/user_data.dart';
+import 'package:social_app/modules/social_app/chat_user.dart';
+import 'package:social_app/shared/components/components.dart';
 import 'package:social_app/shared/components/constans.dart';
 import 'package:social_app/shared/network/remote/social_dio_helper.dart';
 import 'package:social_app/shared/styles/colors.dart';
@@ -35,21 +37,26 @@ class ChatBody extends StatelessWidget{
                return Scaffold(
                  appBar: AppBar(
                    titleSpacing: 0.0,
-                   title: Row(
-                     children: [
-                       CircleAvatar(
-                         radius: 20.0,
-                         backgroundImage: NetworkImage(
-                           user.image??ProfImg,
+                   title: InkWell(
+                     onTap: (){
+                       NavgPushTo(context, ChatUser(user: user, userId: userId));
+                     },
+                     child: Row(
+                       children: [
+                         CircleAvatar(
+                           radius: 20.0,
+                           backgroundImage: NetworkImage(
+                             user.image??ProfImg,
+                           ),
                          ),
-                       ),
-                       const SizedBox(
-                         width: 15.0,
-                       ),
-                       Text(
-                         user.name,
-                       ),
-                     ],
+                         const SizedBox(
+                           width: 15.0,
+                         ),
+                         Text(
+                           user.name,
+                         ),
+                       ],
+                     ),
                    ),
                  ),
                  body: Conditional.single(

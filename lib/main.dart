@@ -24,7 +24,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  var token = await FirebaseMessaging.instance.getToken();
+  // var token = await FirebaseMessaging.instance.getToken();
   // print("token");
   // print(token);
 
@@ -66,15 +66,14 @@ class MyApp extends StatelessWidget{
             listener: (context,state) {},
             builder: (context, state) {
               late Widget widget;
-
               String?  uid = CacheHelper.getString(key: "uid");
-
               if(uid == null ){
                 widget = SocialLogInScreen();
               }else{
                 Uid = uid;
                 widget = SocialLayout();
               }
+
               return  MaterialApp(
                   debugShowCheckedModeBanner: false,
                 home: Directionality

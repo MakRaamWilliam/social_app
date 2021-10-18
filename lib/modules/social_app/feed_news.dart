@@ -18,21 +18,6 @@ class FeedsScreen extends StatelessWidget {
       builder: (context,state){
         SocialCubit cubit = SocialCubit.getInstance(context);
         return Scaffold(
-          // appBar: AppBar(
-          //   title: const Text(
-          //     'News Feeds',
-          //   ),
-          //   actions: [
-          //     IconButton(
-          //       icon: const Icon(
-          //         Icons.search,
-          //       ),
-          //       onPressed: () {
-          //         // NavgPushTo(context, SearchScreen(),);
-          //       },
-          //     ),
-          //   ],
-          // ),
           body: NestedScrollView(
             headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
               return  <Widget>[
