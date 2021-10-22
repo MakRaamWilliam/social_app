@@ -104,6 +104,7 @@ class FeedsScreen extends StatelessWidget {
   Widget buildPostItem(context,index,posts) {
     SocialCubit cubit = SocialCubit.getInstance(context);
     return Card(
+      // color: HexColor('333739'),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       elevation: 5.0,
       margin: const EdgeInsets.symmetric(
@@ -133,7 +134,11 @@ class FeedsScreen extends StatelessWidget {
                         children: [
                           Text(
                             posts[index]['name'],
-                            style: const TextStyle(
+                            style: Theme
+                                .of(context)
+                                .textTheme
+                                .bodyText1!
+                                .copyWith(
                               height: 1.4,
                             ),
                           ),
@@ -148,7 +153,7 @@ class FeedsScreen extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        posts[index]['dateTime'],
+                        posts[index]['dateTime'].toString().substring(0,16),
                         style: Theme
                             .of(context)
                             .textTheme
@@ -193,18 +198,21 @@ class FeedsScreen extends StatelessWidget {
             ),
             if(posts[index]['postImage'] != null &&
                 posts[index]['postImage'] != "" )
-              Container(
-                height: 400.0,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    4.0,
-                  ),
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        posts[index]['postImage']
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Container(
+                  height: 400.0,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      4.0,
                     ),
-                    fit: BoxFit.cover,
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          posts[index]['postImage']
+                      ),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

@@ -9,7 +9,7 @@ ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
     titleSpacing: 20.0,
-    backwardsCompatibility: false,
+    // backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
@@ -49,7 +49,7 @@ ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: HexColor('333739'),
   appBarTheme: AppBarTheme(
     titleSpacing: 20.0,
-    backwardsCompatibility: false,
+    // backwardsCompatibility: false,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: HexColor('333739'),
       statusBarIconBrightness: Brightness.light,
@@ -75,11 +75,17 @@ ThemeData darkTheme = ThemeData(
     elevation: 20.0,
     backgroundColor: HexColor('333739'),
   ),
+  cardColor:HexColor('333739') ,
+
   textTheme: const TextTheme(
     bodyText1: TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
+    ),
+    caption: TextStyle(
+      fontSize: 10.0,
+      color: Colors.white70,
     ),
   ),
 
