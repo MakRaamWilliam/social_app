@@ -2,6 +2,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_app/models/social_app/user_data.dart';
 import 'package:social_app/modules/social_app/register_cubit/states.dart';
@@ -36,6 +37,7 @@ class SocialRegisterCubit extends Cubit<SocialRegistersStates> {
                name: name,
                phone: phone,
                email: email);
+           FirebaseMessaging.instance.subscribeToTopic(Uid);
            emit(SocialRegisterSuccessState());
    }).catchError((error){
            emit(SocialRegisterErrorState(error.toString()));

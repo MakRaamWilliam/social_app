@@ -38,13 +38,11 @@ class FeedsScreen extends StatelessWidget {
                 ),
 
               ];
-
-
             },
             body: Conditional.single(
               context: context,
               conditionBuilder: (context) =>
-              cubit.posts.isNotEmpty  ,
+              cubit.posts.isNotEmpty ,
               widgetBuilder: (context) => SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Column(

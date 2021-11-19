@@ -16,19 +16,23 @@ class SocialSetting extends StatelessWidget{
       listener: (context,state){},
       builder: (context,state){
 
-        return  Column(
-          children: [
-            const Text("Setting"),
-            TextButton(
-                onPressed: () {
-                  CacheHelper.removeData(key: "uid");
-                  SocialCubit.getInstance(context).logOutClick();
-                  NavgPushToAndFinish(context, SocialLogInScreen());
-                },
-                child: const Text("Log out")
-            ),
+        return  Scaffold(
+          appBar: AppBar(
+            title: const Text("Setting"),
+          ),
+          body: Column(
+            children: [
+              TextButton(
+                  onPressed: () {
+                    CacheHelper.removeData(key: "uid");
+                    SocialCubit.getInstance(context).logOutClick();
+                    NavgPushToAndFinish(context, SocialLogInScreen());
+                  },
+                  child: const Text("Log out")
+              ),
 
-          ],
+            ],
+          ),
         );
       },
     );
